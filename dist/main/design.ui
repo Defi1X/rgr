@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.3">
+  <object class="customtkinter.CTk" id="app" named="True">
+    <property name="color_theme">blue</property>
+    <property name="height">800</property>
+    <property name="resizable">none</property>
+    <property name="takefocus">true</property>
+    <property name="title" translatable="yes">Encrypt &amp; Decrypt!</property>
+    <property name="width">600</property>
+    <child>
+      <object class="customtkinter.CTkFrame" id="mainframe" named="True">
+        <property name="height">600</property>
+        <property name="width">800</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="row">0</property>
+        </layout>
+        <child>
+          <object class="customtkinter.CTkButton" id="OpenFileButton" named="True">
+            <property name="command" type="command" cbtype="simple">openFileHandler</property>
+            <property name="compound">left</property>
+            <property name="image">open.png</property>
+            <property name="text" translatable="yes">Open file</property>
+            <property name="width">50</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="pady">10</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="customtkinter.CTkButton" id="clearAllButton" named="True">
+            <property name="command" type="command" cbtype="simple">resetProgramStateHandle</property>
+            <property name="compound">left</property>
+            <property name="text" translatable="yes">X</property>
+            <property name="width">0</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="columnspan">1</property>
+              <property name="row">0</property>
+              <property name="sticky">e</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="customtkinter.CTkButton" id="SaveFileButton" named="True">
+            <property name="command" type="command" cbtype="simple">saveFileHandler</property>
+            <property name="compound">left</property>
+            <property name="image">floppy-disk.png</property>
+            <property name="text" translatable="yes">Save file</property>
+            <property name="width">50</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="customtkinter.CTkTextbox" id="inputTextBox" named="True">
+            <property name="wrap">none</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="padx">10</property>
+              <property name="pady">10</property>
+              <property name="row">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="customtkinter.CTkTextbox" id="outputTextBox" named="True">
+            <property name="text" translatable="yes">
+</property>
+            <property name="wrap">none</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="padx">10</property>
+              <property name="row">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="customtkinter.CTkRadioButton" id="Cypher1_radio" named="True">
+            <property name="command" type="command" cbtype="simple">radio1Handle</property>
+            <property name="state">normal</property>
+            <property name="text" translatable="yes">Viginere cypher</property>
+            <property name="value">1</property>
+            <property name="variable">int:cypher_choice</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="pady">10</property>
+              <property name="padx">20</property>
+              <property name="row">4</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="customtkinter.CTkRadioButton" id="Cypher2_radio" named="True">
+            <property name="command" type="command" cbtype="simple">radio2Handle</property>
+            <property name="state">normal</property>
+            <property name="text" translatable="yes">Atbash cypher</property>
+            <property name="value">2</property>
+            <property name="variable">int:cypher_choice</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="pady">10</property>
+              <property name="padx">20</property>
+              <property name="row">5</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="customtkinter.CTkRadioButton" id="Cypher3_radio" named="True">
+            <property name="command" type="command" cbtype="simple">radio3Handle</property>
+            <property name="state">normal</property>
+            <property name="text" translatable="yes">Gronsfeld cypher</property>
+            <property name="value">3</property>
+            <property name="variable">int:cypher_choice</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="pady">10</property>
+              <property name="padx">20</property>
+              <property name="row">6</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="customtkinter.CTkButton" id="CypherTextButton" named="True">
+            <property name="command" type="command" cbtype="simple">encryptHandle</property>
+            <property name="text" translatable="yes">Encrypt</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="pady">10</property>
+              <property name="row">7</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="customtkinter.CTkButton" id="DecypherTextButton" named="True">
+            <property name="command" type="command" cbtype="simple">decryptHandle</property>
+            <property name="text" translatable="yes">Decrypt</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="row">7</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="customtkinter.CTkLabel" id="InputLabel" named="True">
+            <property name="text" translatable="yes">Input:</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="padx">20</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="customtkinter.CTkLabel" id="outputLabel" named="True">
+            <property name="text" translatable="yes">Output:</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="padx">20</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

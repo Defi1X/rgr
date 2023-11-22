@@ -1,0 +1,1 @@
+pyinstaller --noconfirm --onedir --windowed --add-data "c:/users/defi1/appdata/local/programs/python/python38/lib/site-packages/customtkinter;customtkinter/" --collect-all "pygubu" --collect-all "CTkMessagebox" "main.py"
